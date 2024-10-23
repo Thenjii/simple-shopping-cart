@@ -12,11 +12,13 @@
 </head>
 <body>
 
+    <!-- nav -->
     <div class="container">
         <header class="d-flex justify-content-center py-3">
             <ul class="nav nav-pills">
             <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Products</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Contact Us</a></li>
             <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
             <button type="button" class="btn btn-outline-danger">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
@@ -26,12 +28,135 @@
         </header>
     </div>
 
-    <h1>Au </h1>
+    <h1>AuThenticity </h1>
 
-    <p>
-        
-        <button type="button">add</button>
-    </p>
+    <!-- products -->
+
+    <div class="row">
+        <div class="container my-5">
+            <h1 class="text-center">Large Willow Earings</h1>
+    
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="form-group">
+                        <label for="quantity">Enter Quantity:</label>
+                        <input type="number" id="quantity" class="form-control" min="1" value="1">
+                    </div>
+                    <button class="btn btn-success btn-block" onclick="addToCart()">Add to Cart</button>
+                </div>
+            </div>
+    
+    <div class="row">
+                <div class="container my-5">
+                    <h1 class="text-center">Flat Herringbone Set</h1>
+            
+                    <div class="row">
+                        <div class="col-md-6 offset-md-3">
+                            <div class="form-group">
+                                <label for="quantity">Enter Quantity:</label>
+                                <input type="number" id="quantity" class="form-control" min="1" value="1">
+                            </div>
+                            <button class="btn btn-success btn-block" onclick="addToCart()">Add to Cart</button>
+                        </div>
+    </div>
+
+    <div class="row">
+        <div class="container my-5">
+            <h1 class="text-center">Bold Square Earings</h1>
+    
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="form-group">
+                        <label for="quantity">Enter Quantity:</label>
+                        <input type="number" id="quantity" class="form-control" min="1" value="1">
+                    </div>
+                    <button class="btn btn-success btn-block" onclick="addToCart()">Add to Cart</button>
+                </div>
+    </div>
+
+    <div class="row">
+        <div class="container my-5">
+            <h1 class="text-center">Ear Stack Set</h1>
+    
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="form-group">
+                        <label for="quantity">Enter Quantity:</label>
+                        <input type="number" id="quantity" class="form-control" min="1" value="1">
+                    </div>
+                    <button class="btn btn-success btn-block" onclick="addToCart()">Add to Cart</button>
+                </div>
+    </div>
+
+    <div class="row">
+        <div class="container my-5">
+            <h1 class="text-center">Spine Necklace</h1>
+    
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="form-group">
+                        <label for="quantity">Enter Quantity:</label>
+                        <input type="number" id="quantity" class="form-control" min="1" value="1">
+                    </div>
+                    <button class="btn btn-success btn-block" onclick="addToCart()">Add to Cart</button>
+                </div>
+    </div>
+
+    <div class="row">
+        <div class="container my-5">
+            <h1 class="text-center">Abstract Earings</h1>
+    
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="form-group">
+                        <label for="quantity">Enter Quantity:</label>
+                        <input type="number" id="quantity" class="form-control" min="1" value="1">
+                    </div>
+                    <button class="btn btn-success btn-block" onclick="addToCart()">Add to Cart</button>
+                </div>
+            </div>
+    
+    <div class="row">
+                <div class="container my-5">
+                    <h1 class="text-center">Chuncky Ovals Necklace</h1>
+            
+                    <div class="row">
+                        <div class="col-md-6 offset-md-3">
+                            <div class="form-group">
+                                <label for="quantity">Enter Quantity:</label>
+                                <input type="number" id="quantity" class="form-control" min="1" value="1">
+                            </div>
+                            <button class="btn btn-success btn-block" onclick="addToCart()">Add to Cart</button>
+                        </div>
+    </div>
+
+    <div class="row">
+        <div class="container my-5">
+            <h1 class="text-center">Ring Stack Set</h1>
+    
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="form-group">
+                        <label for="quantity">Enter Quantity:</label>
+                        <input type="number" id="quantity" class="form-control" min="1" value="1">
+                    </div>
+                    <button class="btn btn-success btn-block" onclick="addToCart()">Add to Cart</button>
+                </div>
+    </div>
+
+    <!-- cart -->
+    <div class="mt-5">
+        <h2>Your Cart</h2>
+        <div id="cart" class="border p-3">
+            <p>Cart is empty.</p>
+        </div>
+        <div id="total-cost" class="mt-2">
+            Total: $0.00
+        </div>
+        <button class="btn btn-danger mt-3" onclick="clearCart()">Clear Cart</button>
+    </div>
+</div>
+
 
     <script src="script.js"></script>
 </body>
