@@ -1,53 +1,50 @@
-// Declare global variables for the cart and total cost
-let cart = [];
-const productPrice = ; // Set the product price
-let totalCost = 0;
+// Initialize an empty cart array or load existing cart from localStorage
+let cart = JSON.parse(localStorage.getItem('shoppingCart')) || [];
 
 // Function to add items to the cart
 function addToCart() {
-    const quantity = parseInt(document.getElementById('quantity').value);
+    // Get product details (you might want to use better identifiers like product IDs in a real project)
+    const productElement = event.target.closest('.column'); // Get the closest product container
+    const productName = productElement.querySelector('h6').innerText; // Get the product name
+    const quantityInput = productElement.querySelector('input[type="number"]'); // Get the quantity input field
+    const quantity = parseInt(quantityInput.value); // Convert the quantity to an integer
 
-    if (isNaN(quantity) || quantity < 1) {
-        alert("Please enter a valid quantity.");
-        return;
-    }
+    // Check if product is already in the cart
+    const existingProductIndex = cart.findIndex(item => item.name === productName);
 
-    // Update cart with new quantity
-    cart.push(quantity);
-
-    // Calculate total cost
-    totalCost += quantity * productPrice;
-
-    // Update cart display
-    updateCart();
-}
-
-// Function to clear the cart
-function clearCart() {
-    cart = [];
-    totalCost = 0;
-    updateCart();
-}
-
-// Function to update the cart display
-function updateCart() {
-    const cartDiv = document.getElementById('cart');
-    const totalCostDiv = document.getElementById('total-cost');
-
-    if (cart.length === 0) {
-        cartDiv.innerHTML = '<p>Cart is empty.</p>';
-        totalCostDiv.innerHTML = 'Total: $0.00';
+    if (existingProductIndex !== -1) {
+        // If product exists, update the quantity
+        cart[existingProductIndex].quantity += quantity;
     } else {
-        let cartContent = '<ul class="list-group">';
-        let totalItems = 0;
-        
-        cart.forEach((quantity, index) => {
-            cartContent += `<li class="list-group-item">Item ${index + 1}: Quantity - ${quantity}</li>`;
-            totalItems += quantity;
-        });
-        cartContent += '</ul>';
-
-        cartDiv.innerHTML = cartContent;
-        totalCostDiv.innerHTML = `Total: $${totalCost.toFixed(2)}`;
+        // If product doesn't exist, add it to the cart
+        const product = {
+            name: productName,
+            quantity: quantity
+        };
+        cart.push(product);
     }
+
+    // Save the cart to localStorage
+    localStorage.setItem('shoppingCart', JSON.stringify(cart));
+
+    // Alert or console log a success message
+    alert(`${quantity} ${productName} added to cart!`);
 }
+
+// Function to display the cart items on the cart page (you can call this on a separate cart page)
+function displayCartItems() {
+    const cart = JSON.parse(localStorage.getItem('shoppingCart')) || [];
+    const cartContainer = document.getElementById('cart-items'); // Assuming you have an element with id 'cart-items' to display items
+
+    cartContainer.innerHTML = ''; // Clear previous items
+
+    // Loop through each item in the cart and display it
+    cart.forEach(item => {
+        const cartItem = document.createElement('div');
+        cartItem.classList.add('cart-item');
+        cartItem.innerHTML = `<p>${item.name} - Quantity: ${item.quantity}</p>`;
+        cartContainer.appendChild(cartItem);
+    });
+}
+
+// You can call displayCartItems() on the cart page to load items from localStorage
