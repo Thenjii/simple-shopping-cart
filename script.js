@@ -29,6 +29,7 @@ function addToCart(event) {
     alert(`${quantity} ${productName} added to cart!`);
 }
 
+//cart
 function displayCartItems() {
     const cart = JSON.parse(localStorage.getItem('shoppingCart')) || [];
     const cartContainer = document.getElementById('cart-items');
