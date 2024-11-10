@@ -11,6 +11,40 @@
     background-color: antiquewhite;
     }
 
+header {
+  background-color: url('images/Big\ Striped\ Square\ Earrings\ Gold\ Geometric\ Large\ African\ Statement\ Trible\ Boho\ Chunky\ Oversized\ Modern\ Polymer\ clay\ \ jewelry\ handmade.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 150px;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  padding: 0 !important;
+  margin: 0 !important;
+  background-color: antiquewhite;
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 50px 60px 0 60 px;
+}
+
 .column {
   float: left;
   width: 25%;
