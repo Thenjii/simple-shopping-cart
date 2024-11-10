@@ -24,7 +24,8 @@ function addToCart(event) {
         cart.push(product);
     }
 
-    localStorage.setItem('shoppingCart', JSON.stringify(cart));
+    localStorage.setItem
+    ('shoppingCart', JSON.stringify(cart));
 
     alert(`${quantity} ${productName} added to cart!`);
 }
