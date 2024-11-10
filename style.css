@@ -6,7 +6,7 @@
 }
 
 header {
-  background-color: url('images/88c66ba2-3eb8-4c2f-a31a-1c2634bf0a14.jpg');
+  background-image: url('images/88c66ba2-3eb8-4c2f-a31a-1c2634bf0a14.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -24,7 +24,7 @@ header {
   height: 100%;
   padding: 0 !important;
   margin: 0 !important;
-  background-color: rgba(10, 10, 10, 0.3));
+  background-color: rgba(10, 10, 10, 0.3);
 }
 
 nav {
@@ -56,6 +56,16 @@ li a {
   text-decoration: none;
 }
 
+.add-cart {
+  position: absolute;
+  width: 100%;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  cursor: pointer;
+  text-align: center;
+}
+
 .cart ion-icon {
   background-color: royalblue;
   text-decoration: none;
@@ -70,16 +80,21 @@ li a {
 
 .container {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
+  margin-top: 50px;
+  padding-bottom: 100px;
   gap: 20px; 
-  justify-content: space-between;
+  background-color: darkslategrey;
 }
 
 .image {
-  flex: 1 1 calc(25% - 20px);
-  max-width: calc(25% - 20px); 
+  margin-right: 20px;
+  margin-right: 20px; 
   position: relative;
   overflow: hidden;
+  flex: 1 1 calc(25% - 20px);
+  max-width: calc(25% - 20px);
   aspect-ratio: 1 / 1;
   padding: 5px;
 }
@@ -98,7 +113,8 @@ li a {
 .image:hover .cart6,
 .image:hover .cart7,
 .image:hover .cart8 {
+  bottom: 50px;
   opacity: 1;
-  padding: 5px;
+  padding: 10px;
   text-decoration: none;
 }
