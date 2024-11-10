@@ -1,16 +1,3 @@
-.container{
-    width: 100%;
-    height: 100px;
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    display: block;
-    color: darkslategray;
-    text-align: center;
-    font-family: 'Courier New', Courier, monospace;
-    background-color: antiquewhite;
-    }
-
 header {
   background-color: url('images/Big\ Striped\ Square\ Earrings\ Gold\ Geometric\ Large\ African\ Statement\ Trible\ Boho\ Chunky\ Oversized\ Modern\ Polymer\ clay\ \ jewelry\ handmade.jpg');
   background-repeat: no-repeat;
@@ -62,24 +49,54 @@ li a {
   text-decoration: none;
 }
 
-.column {
-  float: left;
-  width: 25%;
+.cart ion-icon {
   padding: 5px;
+  background-color: #fff;
+  text-decoration: none;
 }
 
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
+.cart a {
+  background-color: aquamarine;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
 }
 
-body {
-    font-family: 'Courier New', Courier, monospace;
-    color: antiquewhite;
-    background-color: darkslategray;
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  padding-bottom: 100px;
 }
 
-h1 {
-    font-family: 'Courier New', Courier, monospace;
+.image {
+  margin-left: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.add-cart {
+  position: absolute;
+  width: 100%;
+  background-color: darkgrey;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  cursor: pointer;
+  text-align: center;
+}
+
+.image:hover .cart1,
+.image:hover .cart2,
+.image:hover .cart3,
+.image:hover .cart4,
+.image:hover .cart5,
+.image:hover .cart6,
+.image:hover .cart7,
+.image:hover .cart8 {
+  bottom: 50px;
+  opacity: 1;
+  padding: 10px;
+  text-decoration: none;
 }
