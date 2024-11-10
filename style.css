@@ -1,5 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Playfair Display', serif;
+}
+
 header {
-  background-color: url('images/Big\ Striped\ Square\ Earrings\ Gold\ Geometric\ Large\ African\ Statement\ Trible\ Boho\ Chunky\ Oversized\ Modern\ Polymer\ clay\ \ jewelry\ handmade.jpg');
+  background-color: url('images/88c66ba2-3eb8-4c2f-a31a-1c2634bf0a14.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -17,7 +24,7 @@ header {
   height: 100%;
   padding: 0 !important;
   margin: 0 !important;
-  background-color: antiquewhite;
+  background-color: rgba(10, 10, 10, 0.3));
 }
 
 nav {
@@ -50,13 +57,12 @@ li a {
 }
 
 .cart ion-icon {
-  padding: 5px;
-  background-color: #fff;
+  background-color: royalblue;
   text-decoration: none;
 }
 
 .cart a {
-  background-color: aquamarine;
+  background-color: royalblue;
   color: #fff;
   cursor: pointer;
   text-decoration: none;
@@ -99,4 +105,4 @@ li a {
   opacity: 1;
   padding: 10px;
   text-decoration: none;
-}
+} 
