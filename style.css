@@ -10,7 +10,7 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 150px;
+  height: 200px;
   position: relative;
 }
 
@@ -106,6 +106,7 @@ li a {
 }
 
 .image:hover .cart1,
+.image:hover .h1,
 .image:hover .cart2,
 .image:hover .cart3,
 .image:hover .cart4,

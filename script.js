@@ -1,54 +1,99 @@
-let cart = JSON.parse(localStorage.getItem('shoppingCart')) || [];
+let carts = document.querySelectorAll('.add-cart');
+let products = [
+    {
+        name: 'Large Willow Earings',
+        tag: 'largeWillowEarings',
+        price: 50,
+        inCart: 0,
+    },
+    {
+        name: 'Flat Herringbone Set',
+        tag: 'flatHerringboneSet',
+        price: 100,
+        inCart: 0,
+    },
+    {
+        name: 'Bold Square Earings',
+        tag: 'boldSquareEarings',
+        price: 40,
+        inCart:0,
+    },
+    {
+        name: 'Ear Stack Set',
+        tag: 'earStackSet',
+        price: 65,
+        inCart: 0,
+    },
+    {
+        name: 'Spine Necklace',
+        tag: 'spineNecklace',
+        price: 80,
+        inCart: 0,
+    },
+    {
+        name: 'Ring Stack Set',
+        tag: 'rRingStackSet',
+        price: 40,
+        inCart: 0,
+    },
+    {
+        name: 'Chunky Ovals Earings',
+        tag: 'chunkyOvalsEaring',
+        price: 55,
+        inCart: 0,
+    },
+    {
+        name: 'Abstract Round Earings',
+        tag: 'abstractRoundEarings',
+        price: 45,
+        inCart: 0,
+    },
+]
 
-function addToCart(event) {
-   const productElement = event.target.closest('.column');
-    const productName = productElement.querySelector('h6').innerText;
-    const quantityInput = productElement.querySelector('.quantity-input');
-    const quantity = parseInt(quantityInput.value);
-    const price = parseFloat(productElement.getAttribute('data-price')); // Get price from data-price attribute
+//add items
+for (let i=0; i < carts.length; i++) {
+    carts[i].addEventListener('click', () =>{
+        cartNumbers(products[i]);
+    })
+}
 
-    const totalPrice = price * quantity;
+function onLoadCartNumbers() {
+    let productNumbers = localStorage.getItem('cartNumbers');
 
-    const existingProductIndex = cart.findIndex(item => item.name === productName);
+    if(productNumbers) {
+        document.querySelector('.cart span').textContent = productNumbers;
+    }
+}
 
-    if (existingProductIndex !== -1) {
-        cart[existingProductIndex].quantity += quantity;
-        cart[existingProductIndex].totalPrice += totalPrice;
+function cartNumbers(product) {
+    let productNumbers = localStorage.getItem('cartNumbers');
+
+    productNumbers = parseInt(productNumbers);
+
+    if(productNumbers ){
+        localStorage.setItem('cartNumbers', productNumbers + 1);
+        document.querySelector('.cart span').textContent = productNumbers + 1;
     } else {
-       const product = {
-            name: productName,
-            quantity: quantity,
-            price: price,
-            totalPrice: totalPrice
-        };
-        cart.push(product);
+        localStorage.setItem('cartNumbers', 1);
+        document.querySelector('.cart span').textContent = 1;
     }
 
-    localStorage.setItem
-    ('shoppingCart', JSON.stringify(cart));
-
-    alert(`${quantity} ${productName} added to cart!`);
+    setItems(product);
 }
 
-//cart
-function displayCartItems() {
-    const cart = JSON.parse(localStorage.getItem('shoppingCart')) || [];
-    const cartContainer = document.getElementById('cart-items');
-    const totalContainer = document.getElementById('cart-total');
+//inside cart
+function setItems(product){
+    let cartItems = localStorage.getItem('productInCart');
+    console
+    
+    product.inCart = 1;
+    
+    cartItems = {
+        [product.tag]: product
+    }
 
-    cartContainer.innerHTML = ''; 
-    let total = 0;
-
-    cart.forEach(item => {
-        const cartItem = document.createElement('div');
-        cartItem.classList.add('cart-item');
-        cartItem.innerHTML = `
-            <p>${item.name} - Price: $${item.price.toFixed(2)} - Quantity: ${item.quantity} - Subtotal: $${item.totalPrice.toFixed(2)}</p>
-        `;
-        cartContainer.appendChild(cartItem);
-
-        total += item.totalPrice; 
-    });
-
-    totalContainer.innerHTML = `<h4>Total: $${total.toFixed(2)}</h4>`;
+    localStorage.setItem("productsInCart", JSON.stringify
+        (cartItems));
 }
+
+onLoadCartNumbers();
