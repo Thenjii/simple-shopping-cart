@@ -113,4 +113,15 @@ function totalCost(product){
     }
 }
 
+function displayCart(){
+    let cartItems = localStorage.getItem("productsInCart");
+    cartItems =JSON.parse(cartItems);
+    let productContainer = document.querySelector(".product-container");
+    if(cartItems && productContainer){
+        productContainer.innerHTML= '';
+        
+    }
+}
+
 onLoadCartNumbers();
+displayCart();
