@@ -138,13 +138,28 @@ li a {
   margin: 0 auto;
 }
 
+.products-contain ion-icon {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 25px;
+  color: blue;
+  cursor: pointer;
+}
+
 .product-title{
   width: 45%;
 }
 
+.quantity {
+  width: 30%;
+  display: flex;
+  border-bottom: 0px solid lightgray;
+  align-items: center;
+}
+
 .price{
   width: 15%;
-  border-bottom: 4px solid lightgray;
+  border-bottom: 0px solid lightgray;
   display: flex;
   align-items: center;
 }
@@ -152,8 +167,8 @@ li a {
 .total{
   width: 10%;
   display: flex;
-  border-bottom: 1px solid lightgray;
-  margin: 0 auto;
+  border-bottom: 0px solid lightgray;
+  align-items: center;
 }
 
 .product{
@@ -165,4 +180,17 @@ li a {
   padding: 10px 0;
 }
 
-8:34 
+.product img{
+  width: 75px;
+}
+
+.cartTotalContainer {
+  justify-content: flex-end;
+  display: flex;
+  padding: 10px 0;
+  width: 100%;
+}
+
+.cartTitle{
+  width: 10%;
+}
