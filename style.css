@@ -85,8 +85,6 @@ li a {
   flex-wrap: wrap;
   margin-top: 50px;
   padding-bottom: 100px;
-  gap: 20px; 
-  background-color: darkslategrey;
 }
 
 .image {
@@ -94,10 +92,6 @@ li a {
   margin-right: 20px; 
   position: relative;
   overflow: hidden;
-  flex: 1 1 calc(25% - 20px);
-  max-width: calc(25% - 20px);
-  aspect-ratio: 1 / 1;
-  padding: 5px;
 }
 
 .image img {
@@ -122,75 +116,83 @@ li a {
 }
 
 /* cart */
-.products-container{
+.products-container {
   max-width: 650px;
+  display: flex; /* Added missing display property */
+  flex-wrap: wrap; /* Ensures items wrap properly */
   justify-content: space-around;
-  margin: 0 auto;
-  margin-top: 50px;
+  margin: 50px auto 0; /* Combined margin declarations */
 }
 
-.product-header{
+.product-header {
   width: 100%;
   max-width: 650px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between; /* Adjusted alignment */
   border-bottom: 4px solid lightgray;
   margin: 0 auto;
+  padding: 10px 0; /* Added padding for spacing */
 }
 
-.products-contain ion-icon {
-  margin-left: 10px;
-  margin-right: 10px;
+.products-container ion-icon { /* Corrected selector typo */
+  margin: 0 10px; /* Simplified margin shorthand */
   font-size: 25px;
   color: blue;
   cursor: pointer;
 }
 
-.product-title{
+.product-title {
   width: 45%;
+  font-weight: bold; /* Optional: Make titles stand out */
 }
 
 .quantity {
   width: 30%;
   display: flex;
-  border-bottom: 0px solid lightgray;
   align-items: center;
+  justify-content: space-between; /* Added for better alignment */
+  border-bottom: 4px solid lightgray;
 }
 
-.price{
+.price {
   width: 15%;
-  border-bottom: 0px solid lightgray;
   display: flex;
   align-items: center;
+  justify-content: center; /* Centers content */
+  border-bottom: 4px solid lightgray;
 }
 
-.total{
+.total {
   width: 10%;
   display: flex;
-  border-bottom: 0px solid lightgray;
   align-items: center;
+  justify-content: center; /* Centers content */
+  border-bottom: 1px solid lightgray;
 }
 
-.product{
-  width: 45%;
+.product {
+  width: 100%; /* Adjusted to occupy full width */
   display: flex;
-  justify-content: flex-start;
-  border-bottom: 4px solid lightgray;
+  justify-content: space-between; /* Improved alignment */
   align-items: center;
+  border-bottom: 4px solid lightgray;
   padding: 10px 0;
 }
 
-.product img{
+.product img {
   width: 75px;
+  height: auto; /* Maintain aspect ratio */
 }
 
 .cartTotalContainer {
-  justify-content: flex-end;
   display: flex;
+  justify-content: flex-end;
+  align-items: center; /* Ensures vertical alignment */
   padding: 10px 0;
   width: 100%;
 }
 
-.cartTitle{
-  width: 10%;
+.cartTitle {
+  width: auto; /* Adjusted for better flexibility */
+  font-weight: bold; /* Optional: Highlight the title */
 }
